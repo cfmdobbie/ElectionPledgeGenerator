@@ -15,21 +15,30 @@ public class PledgeGenerator01 {
 	// And NOUN-PHRASE is constructed as: ADJECTIVE PERSON-NOUN
 
 	/** Selection of VERBs. */
-	private final static String[] verbs = { "Cut", "Eliminate", "Reduce", "Scrap", "Increase", "Freeze", "Maintain",
-			"Protect", "Axe", "Cap", "Overhaul", };
+	private final static String[] verbs = { "Axe", "Boost", "Cap", "Challenge", "Cut", "Defend", "Eliminate", "Freeze",
+			"Generate", "Increase", "Maintain", "Overhaul", "Protect", "Reduce", "Reform", "Ringfence", "Scrap",
+
+	};
 
 	/** Selection of VERB-NOUNs. */
-	private final static String[] verbNouns = { "debt", "taxes", "welfare", "tuition fees", "energy bills",
-			"financial independence", "education funding", "child benefit", "wages", "funding", };
+	private final static String[] verbNouns = { "child benefit", "council tax", "debt", "education funding",
+			"energy bills", "financial independence", "funding", "health inspections", "income tax", "tax credits",
+			"taxes", "the TV licence", "tuition fees", "voting rights", "wages", "weekly bin collections", "welfare",
+			"out-of-work benefits", };
 
 	/** Selection of ADJECTIVEs. */
-	private final static String[] adjectives = { "hard-working", "TB-infected", "publically-funded", "Welsh",
-			"Scottish", "skilled", "illiterate", "failing", };
+	private final static String[] adjectives = { "childless", "disadvantaged", "energy-efficient", "English-speaking",
+			"failing", "hard-working", "illiterate", "ineligible", "nationally-devolved", "public-sector",
+			"publically-funded", "radicalized", "Scottish", "self-employed", "skilled", "TB-infected", "trained",
+			"Welsh", };
 
 	/** Selection of PERSON-NOUNs. */
-	private final static String[] personNouns = { "immigrants", "badgers", "pensioners", "migrants", "MPs",
-			"single mothers", "bankers", "home-owners", "children", "foreigners", "16 year-olds",
-			"public-sector workers", "students", "asylum seekers", "border staff", "NHS patients", };
+	private final static String[] personNouns = { "16 year-olds", "asylum seekers", "badgers", "bankers",
+			"benefits claimants", "border staff", "children", "families", "farmers", "first-time buyers", "fishermen ",
+			"foreigners", "healthcare tourists", "higher-rate tax-payers", "home-owners", "immigrants", "landlords",
+			"lobbyists", "migrants", "MPs", "NHS patients", "pensioners", "primary school children",
+			"public-sector workers", "railway workers", "reality TV stars", "renters", "single mothers", "students",
+			"teenagers", };
 
 	/** Static method to generate a new pledge phrase. */
 	public static String generate() {
