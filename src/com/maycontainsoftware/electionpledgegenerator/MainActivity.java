@@ -10,16 +10,27 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.widget.TextView;
 
+/**
+ * The sole activity in the project.
+ * 
+ * @author Charlie
+ */
 public class MainActivity extends ActionBarActivity {
 
+	/** A simple on-screen instruction. */
 	private TextView tapMessage;
+
+	/** The view that will contain the generated pledge. */
 	private TextView pledge;
+
+	/** The surrounding view (in this case the layout) that changes color. */
 	private View panel;
 
+	/** Whether or not the instruction message is still visible. */
 	private boolean tapMessageVisible = true;
 
 	/** An enumeration that encapsulates colors of political parties along with text color that works with them. */
-	private static enum ColorTheme {
+	private static enum ColorPair {
 		RedW(R.color.red, R.color.white),
 		RedB(R.color.red, R.color.black),
 		BlueW(R.color.blue, R.color.white),
@@ -31,10 +42,21 @@ public class MainActivity extends ActionBarActivity {
 		Purple(R.color.purple, R.color.white),
 		Grey(R.color.grey, R.color.black);
 
+		/** The background color resource id. */
 		private final int background;
+
+		/** THe foreground color resource id. */
 		private final int foreground;
 
-		private ColorTheme(final int background, final int foreground) {
+		/**
+		 * Construct a new ColorPair.
+		 * 
+		 * @param background
+		 *            The background color resource id.
+		 * @param foreground
+		 *            The foreground color resource id.
+		 */
+		private ColorPair(final int background, final int foreground) {
 			this.background = background;
 			this.foreground = foreground;
 		}
@@ -44,16 +66,16 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		// getSupportActionBar().hide();
-
+		// Set up the screen layout
 		setContentView(R.layout.activity_main);
 
+		// Locate references to UI components
 		tapMessage = (TextView) findViewById(R.id.tapMessage);
 		pledge = (TextView) findViewById(R.id.pledge);
 		panel = (View) findViewById(R.id.panel);
 
-		updateColor();
-		updatePledge();
+		// Generate the first pledge
+		update();
 	}
 
 	/**
@@ -62,10 +84,10 @@ public class MainActivity extends ActionBarActivity {
 	 * @param v
 	 *            The specific View that was tapped - of no interest to us here.
 	 */
-	public void tap(View v) {
-		updateColor();
-		updatePledge();
+	public void tap(final View v) {
+		update();
 
+		// If the tap message was still visible, fade it out
 		if (tapMessageVisible) {
 			tapMessageVisible = false;
 			fadeOutTapMessage();
@@ -85,7 +107,7 @@ public class MainActivity extends ActionBarActivity {
 		anim.setAnimationListener(new AnimationListener() {
 			@Override
 			public void onAnimationEnd(Animation animation) {
-				// Hide the message frm the layout when the animation has finished
+				// Hide the message from the layout when the animation has finished
 				tapMessage.setVisibility(View.GONE);
 			}
 
@@ -104,14 +126,20 @@ public class MainActivity extends ActionBarActivity {
 	 * 
 	 * @return A random ColorTheme
 	 */
-	private ColorTheme pickNewColorTheme() {
-		final ColorTheme[] themes = ColorTheme.values();
+	private ColorPair pickNewColorTheme() {
+		final ColorPair[] themes = ColorPair.values();
 		return themes[new Random().nextInt(themes.length)];
+	}
+
+	/** Method to update the app with a new pledge. */
+	private void update() {
+		updateColor();
+		updatePledge();
 	}
 
 	/** Update the View colors wrt a random ColorTheme. */
 	private void updateColor() {
-		final ColorTheme theme = pickNewColorTheme();
+		final ColorPair theme = pickNewColorTheme();
 		panel.setBackgroundColor(getResources().getColor(theme.background));
 		pledge.setTextColor(getResources().getColor(theme.foreground));
 	}
