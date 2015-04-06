@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Background colors -->
+    <color name="red">#f72b0f</color>
+    <color name="green">#78c31e</color>
+    <color name="blue">#0575c9</color>
+    <color name="orange">#fe8300</color>
+    <color name="purple">#712f87</color>
+    <color name="grey">#999999</color>
+
+    <!-- Foreground colors -->
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+
+</resources>
