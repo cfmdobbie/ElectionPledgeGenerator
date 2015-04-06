@@ -56,7 +56,7 @@ public class PledgeGenerator01 {
 	public static String generate() {
 
 		final Random r = new Random();
-		StringBuffer sb = new StringBuffer();
+		final StringBuffer sb = new StringBuffer();
 		sb.append(verb = pick(r, verbs, verb));
 		sb.append(" ");
 		sb.append(verbNoun = pick(r, verbNouns, verbNoun));
