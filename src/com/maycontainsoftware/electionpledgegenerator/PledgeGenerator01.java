@@ -40,18 +40,30 @@ public class PledgeGenerator01 {
 			"public-sector workers", "railway workers", "reality TV stars", "renters", "single mothers", "students",
 			"teenagers", };
 
+	/** The last chosen verb, or null if no verb chosen yet. */
+	private static String verb;
+
+	/** The last chosen verbNoun, or null if no verbNoun chosen yet. */
+	private static String verbNoun;
+
+	/** The last chosen adjective, or null if no adjective chosen yet. */
+	private static String adjective;
+
+	/** The last chosen personNoun, or null if no personNoun chosen yet. */
+	private static String personNoun;
+
 	/** Static method to generate a new pledge phrase. */
 	public static String generate() {
 
 		final Random r = new Random();
 		StringBuffer sb = new StringBuffer();
-		sb.append(pick(r, verbs));
+		sb.append(verb = pick(r, verbs, verb));
 		sb.append(" ");
-		sb.append(pick(r, verbNouns));
+		sb.append(verbNoun = pick(r, verbNouns, verbNoun));
 		sb.append(" for ");
-		sb.append(pick(r, adjectives));
+		sb.append(adjective = pick(r, adjectives, adjective));
 		sb.append(" ");
-		sb.append(pick(r, personNouns));
+		sb.append(personNoun = pick(r, personNouns, personNoun));
 
 		return sb.toString();
 	}
@@ -65,7 +77,13 @@ public class PledgeGenerator01 {
 	 *            The array of Strings.
 	 * @return A random String from the specified array.
 	 */
-	private static String pick(final Random random, final String[] array) {
-		return array[random.nextInt(array.length)];
+	private static String pick(final Random random, final String[] array, final String avoid) {
+		// Pick a new word that doesn't match the word to avoid
+		String word;
+		do {
+			word = array[random.nextInt(array.length)];
+		} while (word == avoid);
+
+		return word;
 	}
 }
