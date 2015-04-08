@@ -3,5 +3,6 @@
 
     <string name="app_name">Election Pledge Generator</string>
     <string name="tapMessage">(Tap to view another)</string>
+    <string name="preamble">We pledge to&#8230;</string>
 
 </resources>
