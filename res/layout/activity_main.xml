@@ -18,8 +18,8 @@
         android:layout_centerHorizontal="true"
         android:onClick="tap"
         android:text="@string/preamble"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textSize="@dimen/minor_text_size" />
 
     <TextView
         android:id="@+id/pledge"
@@ -29,8 +29,8 @@
         android:gravity="center"
         android:onClick="tap"
         android:text="@string/devPledgeText"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textSize="@dimen/pledge_text_size" />
 
     <TextView
         android:id="@+id/tapMessage"
@@ -40,7 +40,7 @@
         android:layout_centerHorizontal="true"
         android:onClick="tap"
         android:text="@string/tapMessage"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textSize="@dimen/minor_text_size" />
 
 </RelativeLayout>
