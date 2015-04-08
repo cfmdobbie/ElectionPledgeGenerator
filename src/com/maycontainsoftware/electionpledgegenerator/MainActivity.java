@@ -31,16 +31,12 @@ public class MainActivity extends ActionBarActivity {
 
 	/** An enumeration that encapsulates colors of political parties along with text color that works with them. */
 	private static enum ColorPair {
-		RedW(R.color.red, R.color.white),
-		RedB(R.color.red, R.color.black),
-		BlueW(R.color.blue, R.color.white),
-		BlueB(R.color.blue, R.color.black),
-		GreenW(R.color.green, R.color.white),
-		GreenB(R.color.green, R.color.black),
-		OrangeW(R.color.orange, R.color.white),
-		OrangeB(R.color.orange, R.color.black),
+		Red(R.color.red, R.color.white),
+		Blue(R.color.blue, R.color.white),
+		Green(R.color.green, R.color.white),
+		Orange(R.color.orange, R.color.white),
 		Purple(R.color.purple, R.color.white),
-		Grey(R.color.grey, R.color.black);
+		Grey(R.color.grey, R.color.white);
 
 		/** The background color resource id. */
 		private final int background;
