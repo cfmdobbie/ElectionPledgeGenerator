@@ -16,9 +16,7 @@ public class PledgeGenerator01 {
 
 	/** Selection of VERBs. */
 	private final static String[] verbs = { "Axe", "Boost", "Cap", "Challenge", "Cut", "Defend", "Eliminate", "Freeze",
-			"Generate", "Increase", "Maintain", "Overhaul", "Protect", "Reduce", "Reform", "Ringfence", "Scrap",
-
-	};
+			"Generate", "Increase", "Maintain", "Overhaul", "Protect", "Reduce", "Reform", "Ringfence", "Scrap", };
 
 	/** Selection of VERB-NOUNs. */
 	private final static String[] verbNouns = { "child benefit", "council tax", "debt", "education funding",

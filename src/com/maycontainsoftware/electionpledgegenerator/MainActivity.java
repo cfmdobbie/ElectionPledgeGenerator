@@ -41,7 +41,7 @@ public class MainActivity extends ActionBarActivity {
 		/** The background color resource id. */
 		private final int background;
 
-		/** THe foreground color resource id. */
+		/** The foreground color resource id. */
 		private final int foreground;
 
 		/**
